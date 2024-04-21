@@ -122,7 +122,7 @@ else
     rm ./backend-local-override.tf || true
     sleep 10 # give AWS some time for the IAM policy to take effect
     echo "Running terragrunt init to initialise Terraform state S3 backend"
-    terragrunt init
+    terragrunt init --reconfigure
 fi
 
 echo "Terraform state account is set to: $TF_AWS_ACCT"
